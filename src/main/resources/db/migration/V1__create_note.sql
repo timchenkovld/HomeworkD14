@@ -1,0 +1,7 @@
+CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+
+CREATE TABLE note(
+id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
+title VARCHAR(15) NOT NULL CHECK(LENGTH(title)>=1 AND LENGTH(title)<=15),
+content VARCHAR(255) NOT NULL
+);
